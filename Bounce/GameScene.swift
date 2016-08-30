@@ -50,7 +50,7 @@ class GameScene: SKScene {
         // SCENE ELEMENTS
         
         //Header
-        header.position = CGPoint(x: CGRectGetMidX(self.frame), y: self.frame.height - (header.frame.height * 0.46))
+        header.position = CGPoint(x: CGRectGetMidX(self.frame), y: self.frame.height - (header.frame.height * 0.4))
         header.zPosition = 100
         header.size = CGSize(width: self.frame.width, height: (self.frame.width / header.frame.width) * header.frame.height)
         
@@ -114,6 +114,7 @@ class GameScene: SKScene {
         //Platform Left
         let platformLeft = SKSpriteNode(imageNamed: "platform_left")
         platformLeft.position = CGPoint(x: self.frame.width / 4, y: platformLeft.frame.height / 2)
+        platformLeft.zPosition = 1
         
         self.addChild(platformLeft)
         //.PL
@@ -121,6 +122,7 @@ class GameScene: SKScene {
         //Platform Right
         let platformRight = SKSpriteNode(imageNamed: "platform_right")
         platformRight.position = CGPoint(x: (self.frame.width / 4) * 3, y: platformRight.frame.height / 2)
+        platformRight.zPosition = 1
         
         self.addChild(platformRight)
         //.PR
@@ -147,6 +149,9 @@ class GameScene: SKScene {
             sprite.runAction(SKAction.repeatActionForever(action))
             
             self.addChild(sprite)
+            
+
+        
         }
     }
     
